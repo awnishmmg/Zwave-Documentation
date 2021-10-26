@@ -22,11 +22,12 @@ $data = [];
 	$v = new Validator();
 	$validator = $v->init();
 	$validation = $validator->make(post(),[
-		'name'=>'required|alpha',
-		'description'=>'required|alpha',
-		'rating'=>'required|numeric',
-		'duration'=>'required|numeric',
-		'instructor'=>'required|numeric',
+		'name'=>'required',
+		'description'=>'required',
+		'rating'=>'required',
+		'duration'=>'required',
+		'month_duration' =>'required',
+		'instructor'=>'required',
 	]);
 
 	$validation->validate();
