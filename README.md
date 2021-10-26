@@ -34,6 +34,22 @@ if(function_exists('__error__')){
 ```
 The ``` __error__() ``` will be global function which can modify the response of 404 page not found
 
+### How to make custom helper function ``` show_404 ``` to handle request any request
+Goto path web-app/helper/debugger_helper.php Add following code
+
+```
+function show_404(){
+	load::resource('../404');
+}
+
+```
+No Go to Any Controller and Add Function at the bottom
+
+```
+function __error__(){
+	show_404();
+}
+```
 ## How to Add Validation 
 ```
 $data = [];
