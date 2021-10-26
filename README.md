@@ -9,7 +9,7 @@ quick and easy build and deployement.
 The Custom 404 Error Page is part of Zwave Configuration.
 ### Enable Global Error Page
 Go to Path, project level 
-project/.htaccess
+**project/.htaccess
 
 Copy the Path from ENV_BASE_URL to ErrorDocument
 ```
@@ -40,10 +40,10 @@ $data = [];
 ```
 ### How to Perform File Uploading in Zwave using upload.class.php 
 Use following step to perform file upload
-1. make a folder resources/uploads
-2. autoload the library upload.class
+1. make a folder **resources/uploads
+2. autoload the library config/config.php with array value as **upload.class
 ```
-	$banner = $_FILES['banner'];
+		$banner = $_FILES['banner'];
 	if(empty($banner['name'])){
 		$errors['banner'] = 'Banner is Required';
 	}else{
@@ -51,7 +51,7 @@ Use following step to perform file upload
 	$upload->set($banner)->max_size(5)->allow_extension('png|jpeg|jpg')->name('file_'.time());
 	if($upload->do_upload()){
 
-			$uploaded_file = Upload::getProperties();
+			$uploaded_file = $upload->file_info();
 			prx($uploaded_file);
 
 		}else{
