@@ -60,3 +60,17 @@ Use following step to perform file upload
 
 
 ```
+### How to Add Flash Error Messages and Pass on the view 
+```
+<!-- Adding Error Messages -->
+
+<?php if(count($errors)>0): ?>
+<ul style="background-color:white">
+<?php foreach($errors as $error): ?>
+	<li style="color:Red;font-weight: bold;"><?php echo $error; ?></li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+<!-- Adding Error Messages -->
+```
