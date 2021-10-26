@@ -17,4 +17,46 @@ Copy the Path from ENV_BASE_URL to ErrorDocument
  SetEnv ENV_BASE_URL http://localhost:786/myproject/zwave/web-app/
 ```
     
+## How to Add Validation 
+```
+$data = [];
+	$v = new Validator();
+	$validator = $v->init();
+	$validation = $validator->make(post(),[
+		'name'=>'required|alpha',
+		'description'=>'required|alpha',
+		'rating'=>'required|numeric',
+		'duration'=>'required|numeric',
+		'instructor'=>'required|numeric',
+	]);
 
+	$validation->validate();
+	if($validation->fails()){
+		$error = $validation->errors();
+		$errors = $error->firstOfAll();
+
+	}
+
+```
+### How to Perform File Uploading in Zwave using upload.class.php 
+Use following step to perform file upload
+1. make a folder resources/uploads
+2. autoload the library upload.class
+```
+	$banner = $_FILES['banner'];
+	if(empty($banner['name'])){
+		$errors['banner'] = 'Banner is Required';
+	}else{
+	$upload = new Upload();
+	$upload->set($banner)->max_size(5)->allow_extension('png|jpeg|jpg')->name('file_'.time());
+	if($upload->do_upload()){
+
+			$uploaded_file = Upload::getProperties();
+			prx($uploaded_file);
+
+		}else{
+			 $errors['banner'] =  $upload->report();
+	}
+
+
+```
