@@ -74,3 +74,9 @@ Use following step to perform file upload
 
 <!-- Adding Error Messages -->
 ```
+### How to Retain the value of the, Validating Input Fields
+Make sure use ``` :id ``` and ``` :name ``` Field on the Input Type Fields 
+```
+<p> Name: <input type="text" name="name" id="name" value="<?php echo set_value('name',post(),'name'); ?>"/> </p>
+
+```
