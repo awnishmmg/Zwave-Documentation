@@ -32,6 +32,8 @@ if(function_exists('__error__')){
 
 
 ```
+The ``` __error__() ``` will be global function which can modify the response of 404 page not found
+
 ## How to Add Validation 
 ```
 $data = [];
