@@ -15,7 +15,23 @@ Copy the Path from ENV_BASE_URL to ErrorDocument
  ErrorDocument 404 /myproject/zwave/404.php
  SetEnv ENV_BASE_URL http://localhost:786/myproject/zwave/web-app/
 ```
-    
+Modify the Request Handler in ``` config/request_handler.php ```
+Along the Line 64 Replace the Following code in else Block
+
+```
+
+if(function_exists('__error__')){
+			return call_user_func_array('__error__',array());
+		}else{
+
+			echo("<b> ".get('_method')." url Not Allowed </b><br/>");
+			debug_print_backtrace();
+			exit;
+
+		}
+
+
+```
 ## How to Add Validation 
 ```
 $data = [];
