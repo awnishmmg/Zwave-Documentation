@@ -34,7 +34,7 @@ if(function_exists('__error__')){
 ```
 The ``` __error__() ``` will be global function which can modify the response of 404 page not found
 
-### How to make custom helper function ``` show_404 ``` to handle request any request
+### How to make custom helper function ``` show_404 ``` to handle request on request
 Goto path web-app/helper/debugger_helper.php Add following code
 
 ```
