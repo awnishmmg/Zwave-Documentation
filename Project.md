@@ -70,3 +70,28 @@ Goto file enroll_view.php as following code
 </form>
 
 ```
+
+## Step5:
+### Now we ready to code in mvc framework goto controller ``` register.php ```
+Add the following code
+
+```
+<?php 
+
+// Student Enrollement Controller
+
+Request::method('',function(){
+	load::view('views/enroll');
+});
+
+Request::method('create',function(){
+	prx('Method Created');
+});
+
+
+function __error__(){
+	show_404();
+}
+
+
+```
