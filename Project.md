@@ -72,7 +72,7 @@ Goto file enroll_view.php as following code
 ```
 
 ## Step5:
-### Now we ready to code in mvc framework goto controller ``` register.php ```
+### Now we ready to code in mvc framework goto controller ``` web-app/register.php ```
 Add the following code
 
 ```
