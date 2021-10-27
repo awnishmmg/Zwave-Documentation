@@ -45,3 +45,28 @@ RewriteRule ^(student/enroll)/([a-zA-Z0-9\-]+)$ register.php?_method=$2 [L,QSA]
 RewriteRule ^(student/enroll)$ register.php [L,QSA]
 
 ```
+
+## Step 4:
+### In Order to work in same pattern, that you have done in admin or will require, mvc approach that you already know goto path ``` web-app/view/ ```
+make a folder ``` views ``` parallel to layout and errors Please Refer
+to project structure
+
+### web-app
+###   |------>view
+###             |----->errors
+###             |----->layout    
+###             |----->views [MAKE YOUR FOLDER HERE]
+
+Create some file called as ``` enroll_view.php ``` please make sure you add ``` _view.php ``` as extension.
+
+Goto file enroll_view.php as following code
+
+```
+<h1>Student Register Here</h1>
+<hr>
+<form>
+	<!-- Make your student form here same as course controller -->
+
+</form>
+
+```
