@@ -95,3 +95,24 @@ function __error__(){
 
 
 ```
+
+## Step6:
+### Now last step is Add Routes for the controller ``` web-app/config/routes.php ```
+
+Copy paste or Add the Following Code.
+
+```
+
+$routes['admin:DashboardController'] = array('main','logout');
+$routes['admin:ManageUserController'] = array('add-new','add-new-bdagent','user','bds','delete','bds-delete');
+$routes['admin:DepartmentController'] = array('manage','add');
+$routes['admin:ChangeLoginController'] = array('user','admin');
+$routes['admin:ContactsController'] = array('add','manage','create','delete');
+$routes['admin:CourseController'] = array('manage','create','save');
+
+//  This Code is Added for the Student
+$routes['student:register'] = array('','create');
+
+```
+
+Goto Url: http://localhost:<port>/your-project/web-app/student/enroll
