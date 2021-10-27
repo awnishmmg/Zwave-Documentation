@@ -115,4 +115,10 @@ $routes['student:register'] = array('','create');
 
 ```
 
-Goto Url: http://localhost:<port>/your-project/web-app/student/enroll
+
+### Goto Url:
+```
+ http://localhost:<port-no>/your-project/web-app/student/enroll
+```
+
+
