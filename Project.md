@@ -31,3 +31,17 @@ $session_not_allowed[] = 'contact.php';
 $session_not_allowed[] = 'student';  //This is change we made note that, any url after student will not require session
 
 ```
+## Step 3:
+### No Url will be loaded unless and until mvc Rewrite Rules are added in .htaccess file
+
+Find the File ``` web-app/.htaccess ```
+
+Add the Following lines of code.
+
+```
+#student Enrollment Controller
+RewriteRule ^(student/enroll)/([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-/]+)$ register.php?_method=$2&_values=$3 [L,QSA] 
+RewriteRule ^(student/enroll)/([a-zA-Z0-9\-]+)$ register.php?_method=$2 [L,QSA] 
+RewriteRule ^(student/enroll)$ register.php [L,QSA]
+
+```
