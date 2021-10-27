@@ -21,7 +21,8 @@ Copy paste the code or type according to your choice.
 ```
 ## step 2:
 ### Make the following change in ``` web-app/config/session.php ```
-
+Add the following piece of code
+```
 #page where session will not be created
 $session_not_allowed[] = 'login'; 
 $session_not_allowed[] = 'home.php'; 
@@ -29,3 +30,4 @@ $session_not_allowed[] = 'about.php';
 $session_not_allowed[] = 'contact.php'; 
 $session_not_allowed[] = 'student';  //This is change we made note that, any url after student will not require session
 
+```
