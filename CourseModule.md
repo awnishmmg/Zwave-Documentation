@@ -2,7 +2,7 @@
 # Working with Course Module in LMS Project inside admin
 ### Make sure your ```dbadmin``` is running if not use the command to open dbadmin
 ```
-php zwave launch::dbadmin
+php zwave serve launch::dbadmin
 
 ``` 
 Login to Adminer Database connect with your credentails
