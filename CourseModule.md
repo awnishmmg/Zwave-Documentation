@@ -1,5 +1,6 @@
 
 # Working with Course Module in LMS Project inside admin
+## Step 1:
 ### Make sure your ```dbadmin``` is running if not use the command to open dbadmin
 ```
 php zwave serve launch::dbadmin
@@ -34,4 +35,30 @@ CREATE TABLE `tbl_course` (
   `status` varchar(255) NULL
 );
 
+```
+## Step 2:
+### How to create ``` course_model ``` goto web-app/model/admin/ ``` create a file ```Course_model.php ``` and write the following code.
+
+Make sure File name and class name should be same , also make sure the first letter of File and class name should be capital.
+
+```
+<?php
+
+class Course_model{
+
+  public function add_course($formdata){
+
+    global $chain;
+    $chain = false;
+    if(insertat('tbl_course',$formdata)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}
+
+
+
+?>
 ```
