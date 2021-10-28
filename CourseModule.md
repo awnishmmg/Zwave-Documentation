@@ -87,8 +87,7 @@ Note: This ``` now() ``` will be used for, Adding timestamp (date + time) to the
 ```
 
 ## Step 5:
-### Now goto the ``` web-app/admin/CourseController.php ``` Add the following code in else block after if($validation->fails()){ }
-Block
+### Now goto the ``` web-app/admin/CourseController.php ``` Add the following code in else block after if($validation->fails()){ } Block
 
 ```
     //check for validation
@@ -119,7 +118,7 @@ Block
         'is_banner_added'=>'0',
         'is_syllabus_added'=>'0',
         'created_by'=>$created_by, //get it from session
-        'created_at'=>now(), // get from timestam.php
+        'created_at'=>now(), // get from timestamp.php
         'status'=>'active', // set active status
 
       ];
