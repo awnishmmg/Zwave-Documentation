@@ -37,7 +37,7 @@ CREATE TABLE `tbl_course` (
 
 ```
 ## Step 2:
-### How to create ``` course_model ``` goto web-app/model/admin/ ``` create a file ```Course_model.php ``` and write the following code.
+### How to create ``` course_model ```  goto path at ``` web-app/model/admin/  ``` create a file  ``` Course_model.php ``` and write the following code.
 
 Make sure File name and class name should be same , also make sure the first letter of File and class name should be capital.
 
