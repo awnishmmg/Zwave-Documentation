@@ -75,3 +75,4 @@ function now(){
 }
 
 ```
+Note: This ``` now() ``` will be used for, Adding timestamp (date + time) to the field.
