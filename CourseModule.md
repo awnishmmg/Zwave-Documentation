@@ -76,3 +76,65 @@ function now(){
 
 ```
 Note: This ``` now() ``` will be used for, Adding timestamp (date + time) to the field.
+
+## Step 4: 
+### In Order to get Any Information from session we always have to use this code,
+
+```
+      $session_data = session::get('session_data');
+      prx($session_data);
+
+```
+
+## Step 5:
+### Now goto the ``` web-app/admin/CourseController.php ``` Add the following code in else block after if($validation->fails()){ }
+Block
+
+```
+    //check for validation
+    $validation->validate();
+    //check if validation fails
+    if($validation->fails()){
+      $error = $validation->errors(); //get all the validation
+      $errors = $error->firstOfAll(); // and first of all show it 
+      $data['errors'] = $errors;
+      $data['users'] = $users;
+      load::resource('admin/views/course/add',$data);
+    }else{
+
+      //form submitted
+      load::model('admin/Course'); #load 
+      $course_model = new Course_model(); #Object
+
+      $session_data = session::get('session_data');
+      $created_by = $session_data['user_id'];
+
+      $formdata = [
+        'course_name'=>post('course_name'), //Add Your Column names
+        'duration_hr'=>post('duration_hr'), //Add your fields names
+        'duration_month'=>post('duration_month'),
+        'course_rating'=>post('course_rating'),
+        'course_description'=>post('course_description'),
+        'user_id'=>post('instructor'),
+        'is_banner_added'=>'0',
+        'is_syllabus_added'=>'0',
+        'created_by'=>$created_by, //get it from session
+        'created_at'=>now(), // get from timestam.php
+        'status'=>'active', // set active status
+
+      ];
+
+      //if it return true set flash data with success or else
+      // with danger and redirect_to back to from
+      if($course_model->add_course($formdata)){
+        set_flashData('message','Course Added Success','success');
+        return redirect_to('admin/course/create');
+      }else{
+        set_flashData('message','OOps Cannot Added','danger');
+        return redirect_to('admin/course/create');
+
+      }
+    }
+
+
+```
