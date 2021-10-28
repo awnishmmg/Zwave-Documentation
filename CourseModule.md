@@ -137,3 +137,17 @@ Note: This ``` now() ``` will be used for, Adding timestamp (date + time) to the
 
 
 ```
+## Step 6:
+### Add the flash data on the  ```web-app/admin/views/course/add.php```
+Add the following code on the top of form on line 
+
+```
+<?php get_flashData('message'); ?>
+<h1>Create Course</h1>
+
+```
+
+Finally Try checking the Submitting data from Add course you should
+get course added succesfull message as success message and will disappear in 3 seconds.
+
+Goto Database Adminer to check for the Record is inserted in ```tbl_course``` or not
