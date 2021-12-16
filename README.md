@@ -114,3 +114,37 @@ Make sure use ``` :id ``` and ``` :name ``` Field on the Input Type Fields
 <p> Name: <input type="text" name="name" id="name" value="<?php echo set_value('name',post(),'name'); ?>"/> </p>
 
 ```
+
+### How to Manage Redirection State for logged In User
+On the Login page Add the following code given below
+```
+<?php startSection(); ?>
+<?php redirect_state('dashboard'); ?>
+<!doctype html>
+<html lang="en-us">
+```
+
+And at the end of the file as the following code
+```
+</html>
+<?php endSection(); ?>
+```
+
+### Before Adding Code make a custom function for managing redirection_state(String $redirect_url);
+Inside web-app/functions/function.php 
+```
+//redirection state :: for manging login state of the user dynamically
+
+function redirect_state($redirect_url){
+	global $session_key;
+	session::start();
+	foreach($session_key as $sesskey => $value){
+	if(session::get($value)){
+		redirect_to($sesskey.'/'.$redirect_url);
+		break;
+		}
+	}
+}
+
+
+```
